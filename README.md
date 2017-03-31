@@ -17,11 +17,38 @@ Just add a compile option to add the Eigen path, and include numpycpp.h in your 
 
 # APIs
 
+The test code: numpycppTest.cpp helps to understand APIs.
+
 ## vstack
 
 ## hstack
 
+    Eigen::MatrixXf x(3,1);
+    x<<5.0,
+       6.0,
+       7.0;
+
+    Eigen::MatrixXf y(3,1);
+    y<<1.0,
+       10.0,
+       100.0;
+
+    Eigen::MatrixXf a = hstack(x,y);
+    //a:
+    //5   1
+    //6  10
+    //7 100
+
 ## kron
+
+Compute the Kronecker product
+
+A composite array made of blocks of the second array scaled by the first.
+
+Inspired numpy.kron. (*see: https://docs.scipy.org/doc/numpy/reference/generated/numpy.kron.html)
+
+
+
 
 ## block_diag_
 
@@ -32,5 +59,5 @@ MIT
 
 # Author
 
-Atsushi Sakai ([(@Atsushi_twi)](https://twitter.com/Atsushi_twi))
+Atsushi Sakai ([@Atsushi_twi](https://twitter.com/Atsushi_twi))
 
