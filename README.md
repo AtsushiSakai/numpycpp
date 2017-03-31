@@ -33,7 +33,9 @@ see :https://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html
        7.0;
 
     Eigen::MatrixXf y(3,1);
-    y<<1.0,10.0,100.0;
+    y<<1.0,
+       10.0,
+       100.0;
 
     Eigen::MatrixXf a = vstack(x,y);
     //ans<<5,
@@ -44,7 +46,7 @@ see :https://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html
     //     100;
 
 ## hstack
-**
+
 Stack matrix in sequence horizontally
 
 imspired by numpy.hstack
