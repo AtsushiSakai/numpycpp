@@ -1,7 +1,7 @@
 #include <math.h>
 #include <chrono>
 #include "gtest/gtest.h"
-#include "../mpccpp/numpycpp.h"
+#include "numpycpp.h"
 
 
 TEST(numpycpp, test1) {
