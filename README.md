@@ -1,9 +1,9 @@
 # numpycpp
 [![Build Status](https://travis-ci.org/AtsushiSakai/numpycpp.svg?branch=master)](https://travis-ci.org/AtsushiSakai/numpycpp)
 
-A c++ header library for matrix operation inspired Numpy and Scipy using Eigen.
+A c++ header library for matrix operation inspired Numpy, Scipy and MATLAB only using Eigen.
 
-This library has some APIs which Numpy or Scipy has, but Eigen doesn't.
+This library has some APIs which Numpy, Scipy, MATLAB has, but Eigen doesn't.
 
 You can use it with only Eigen, and only include it.
 
