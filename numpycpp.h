@@ -11,6 +11,36 @@
 #define PRINT(X) std::cout << #X << ":\n" << X << std::endl << std::endl
 
 /**
+ * @brief Detemine if matrix is diagonal
+ *        if matrix is not square, return false
+ *
+ *        It is inspired by MATLAB isdiag function.
+ *        see: https://www.mathworks.com/help/matlab/ref/isdiag.html
+ *
+ * @param x input matrix
+ *
+ * @return matrix is diagonal (true) or not (false)
+ */
+bool isdiag(const Eigen::MatrixXf &x){
+
+  if(x.cols()!=x.rows()){
+    return false;//not square matrix
+  }
+
+  Eigen::MatrixXf t = x.diagonal().asDiagonal();
+  // PRINT(t);
+ 
+  // std::cout<<std::abs((t-x).sum())<<std::endl;
+  if(std::abs((t-x).sum())>=0.00001){
+    return false;
+  }
+
+  return true;
+
+}
+
+
+/**
  * @brief Stack matrix in sequence vertically
  *        imspired by numpy.vstack
  *        https://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html

@@ -19,6 +19,34 @@ Just add a compile option to add the Eigen path, and include numpycpp.h in your 
 
 The test code: numpycppTest.cpp helps to understand APIs.
 
+## isdiag
+
+Detemine if matrix is diagonal
+
+If matrix is not square, return false
+
+It is inspired by MATLAB isdiag function.
+
+see: https://www.mathworks.com/help/matlab/ref/isdiag.html
+
+
+
+    Eigen::MatrixXf x(3,1);
+    x<<5.0,6.0,7.0;
+    bool flag = isdiag(x);//return false
+
+    Eigen::MatrixXf x2(2,2);
+    x2<<5.0,6.0,7.0,1.0;
+    bool flag2 = isdiag(x2);//return false
+
+    Eigen::MatrixXf x3(3,3);
+    x3<<1.0,0.0,0.0,
+        0.0,1.0,0.0,
+        0.0,0.0,1.0;
+    bool flag3 = isdiag(x3);//return true
+
+
+
 ## vstack
 
 Stack matrix in sequence vertically

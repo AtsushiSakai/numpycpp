@@ -181,3 +181,24 @@ TEST(numpycpp, test7) {
 
 }
 
+TEST(numpycpp, test8) {
+  Eigen::MatrixXf x(3,1);
+  x<<5.0,6.0,7.0;
+  PRINT(x);
+
+  ASSERT_FALSE(isdiag(x));
+
+  Eigen::MatrixXf x2(2,2);
+  x2<<5.0,6.0,7.0,1.0;
+  PRINT(x2);
+  ASSERT_FALSE(isdiag(x2));
+
+  Eigen::MatrixXf x3(3,3);
+  x3<<1.0,0.0,0.0,
+      0.0,1.0,0.0,
+      0.0,0.0,1.0;
+  PRINT(x3);
+  ASSERT_TRUE(isdiag(x3));
+
+}
+
