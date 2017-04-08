@@ -132,7 +132,7 @@ A composite array made of blocks of the second array scaled by the first.
 
 Inspired numpy.kron. 
 
-*see: https://docs.scipy.org/doc/numpy/reference/generated/numpy.kron.html
+see: https://docs.scipy.org/doc/numpy/reference/generated/numpy.kron.html
 
 
     Eigen::MatrixXf x(1,3);
@@ -145,7 +145,7 @@ Inspired numpy.kron.
     // a = [5 50 500  6 60 600  7  70 700]
 
 
-## block_diag_
+## block_diag
 
 Create a block diagonal matrix from provided matrices
 
