@@ -11,6 +11,30 @@
 #define PRINT(X) std::cout << #X << ":\n" << X << std::endl << std::endl
 
 /**
+ * @brief  Gives a new shape to an array without changing its data.
+ *         This function is based on numpy.reshape 
+ *         see: https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html
+ *
+ * @param x input matrix
+ * @param r the number of row elements
+ * @param c the number of collum elements
+ *
+ * @return The new shape matrix
+ */
+Eigen::MatrixXf reshape(
+    Eigen::MatrixXf &x,
+    uint32_t r,
+    uint32_t c
+    ){
+
+    Eigen::Map<Eigen::MatrixXf> rx(x.data(), r, c);
+  
+    return rx;
+}
+
+
+
+/**
  * @brief Detemine if matrix is diagonal
  *        if matrix is not square, return false
  *

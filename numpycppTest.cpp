@@ -202,3 +202,29 @@ TEST(numpycpp, test8) {
 
 }
 
+TEST(numpycpp, test9) {
+  Eigen::MatrixXf x(6,1);
+  x<<1.0,2.0,3.0,4.0,5.0,6.0;
+  PRINT(x);
+
+  Eigen::MatrixXf rx = reshape(x,2,3);
+  PRINT(rx);
+  //rx:
+  //1 3 5
+  //2 4 6
+
+  ASSERT_LE(std::abs((rx.rows()-2)), 0.01);
+  ASSERT_LE(std::abs((rx.cols()-3)), 0.01);
+
+  Eigen::MatrixXf rx2 = reshape(x,3,2);
+  PRINT(rx2);
+  //rx2:
+  //1 4
+  //2 5
+  //3 6
+
+  ASSERT_LE(std::abs((rx2.rows()-3)), 0.01);
+  ASSERT_LE(std::abs((rx2.cols()-2)), 0.01);
+
+}
+
