@@ -228,3 +228,41 @@ TEST(numpycpp, test9) {
 
 }
 
+TEST(numpycpp, test10) {
+  Eigen::MatrixXf x;//empty matrix
+  PRINT(x);
+
+  Eigen::MatrixXf y(3,1);
+  y<<1.0,10.0,100.0;
+  PRINT(y);
+
+  Eigen::MatrixXf a = vstack(x,y);
+  PRINT(a);
+  
+  Eigen::MatrixXf ans(3,1);
+  ans<<1.0,10.0,100.0;
+  PRINT(ans);
+
+  ASSERT_LE(std::abs((ans-a).sum()), 0.01);
+
+}
+
+TEST(numpycpp, test11) {
+  Eigen::MatrixXf x;//empty matrix
+  PRINT(x);
+
+  Eigen::MatrixXf y(3,1);
+  y<<1.0,10.0,100.0;
+  PRINT(y);
+
+  Eigen::MatrixXf a = hstack(x,y);
+  PRINT(a);
+  
+  Eigen::MatrixXf ans(3,1);
+  ans<<1.0,10.0,100.0;
+  PRINT(ans);
+
+  ASSERT_LE(std::abs((ans-a).sum()), 0.01);
+
+}
+

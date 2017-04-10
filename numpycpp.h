@@ -79,7 +79,19 @@ Eigen::MatrixXf vstack(
     const Eigen::MatrixXf &m2
     ){
 
-    Eigen::MatrixXf rm(m1.rows()+m2.rows(), m1.cols());
+    if(m1.rows() == 0){
+      return m2;
+    }
+    else if(m2.rows() == 0){
+      return m1;
+    }
+
+    uint32_t ncol = m1.cols();
+    if(ncol == 0){
+      ncol = m2.cols();
+    }
+
+    Eigen::MatrixXf rm(m1.rows()+m2.rows(), ncol);
     rm << m1, m2;
   
     return rm;
@@ -101,7 +113,19 @@ Eigen::MatrixXf hstack(
     const Eigen::MatrixXf &m2
     ){
 
-    Eigen::MatrixXf rm(m1.rows(), m1.cols()+m2.cols());
+    if(m1.cols() == 0){
+      return m2;
+    }
+    else if(m2.cols() == 0){
+      return m1;
+    }
+
+    uint32_t nrow = m1.rows();
+    if(nrow == 0){
+      nrow = m2.rows();
+    }
+
+    Eigen::MatrixXf rm(nrow, m1.cols()+m2.cols());
     rm << m1, m2;
   
     return rm;
